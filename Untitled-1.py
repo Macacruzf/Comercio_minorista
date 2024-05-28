@@ -1,2 +1,2 @@
 print("bienvendos")
-print()
+print("hi esto es una cadena espero que les gsute chicos")
