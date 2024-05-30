@@ -1,8 +1,13 @@
 # Inicializar una matriz vacía para almacenar productos (inventario)
 inventario = []
 
-# Inicializar una lista para almacenar usuarios
-usuarios = []
+# identifica usuario
+usuario = []
+while True:
+    usuario = input("Ingrese su nombre de usuario:")
+    contrasena = input("Ingrese su contraseña:")
+    break
+#Comienza el menu del comercio
 while True:
     print("Menú COMERCIO ALMA ZEN:")
     print("1. Agregar producto")
