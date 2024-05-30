@@ -36,6 +36,30 @@ while True:
                     print(f"Venta procesada: Se vendio {cantidad} unidades de '{nombre}' por un total de ${precio_con_iva:.2f} (incluido 19% de IVA).")
                 else:
                     print(f"No hay suficiente unidades de '{nombre}' en stock.")
+        else:
+            print(f"El producto '(nombre)'no esta en el inventario.")
+elif opcion == "4":
+    if inventario:
+        total_productos = len(inventario)
+        total_cantidad = sum(producto[1] for producto in inventario)
+        total_valor = sum(producto[1] * producto[2] for producto in inventario)
+        print("Informe del inventario:")
+        print(f"Total de productos: {total_productos}")
+        print(f"Total de unidades en stock: {total_cantidad}")
+        print(f"Valor total del inventario: ${total_valor:.2f}")
+    else:
+        print("El inventario esta vacio.")
+elif opcion == "5":
+    print("Saliendo del programa...")
+    break
+else:
+    print("Opcion Invalida.")
+
+  
+            
+            
+        
+                
         
                     
                     
