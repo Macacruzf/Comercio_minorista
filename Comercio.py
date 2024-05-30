@@ -26,7 +26,7 @@ while True:
             print("El inventario está vacío")
     elif opcion =="3":
         nombre = input("Ingrese el nombre del producto a vender:  ")
-        cantidad = int(input("Ingrese la cantidad a vender:  ")
+        cantidad = int(input("Ingrese la cantidad a vender:  "))
         for producto in inventario:
             if producto[0] == nombre:
                 if producto[1] >= cantidad:
@@ -39,7 +39,7 @@ while True:
         else:
             print(f"El producto '(nombre)'no esta en el inventario.")
 elif opcion == "4":
-    if inventario:
+     if inventario:
         total_productos = len(inventario)
         total_cantidad = sum(producto[1] for producto in inventario)
         total_valor = sum(producto[1] * producto[2] for producto in inventario)
@@ -47,7 +47,7 @@ elif opcion == "4":
         print(f"Total de productos: {total_productos}")
         print(f"Total de unidades en stock: {total_cantidad}")
         print(f"Valor total del inventario: ${total_valor:.2f}")
-    else:
+     else:
         print("El inventario esta vacio.")
 elif opcion == "5":
     print("Saliendo del programa...")
