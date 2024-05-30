@@ -24,3 +24,22 @@ while True:
               print(f"Nombre:{producto[0]}, Cantidad:{producto[1]},Precio:${producto[2]:.2f}")
           else:
             print("El inventario está vacío")
+    elif opcion =="3":
+        nombre = input("Ingrese el nombre del producto a vender:  ")
+        cantidad = int(input("Ingrese la cantidad a vender:  ")
+        for producto in inventario:
+            if producto[0] == nombre:
+                if producto[1] >= cantidad:
+                    producto[1] -= cantidad
+                    precio_sin_iva = producto[2] * cantidad
+                    precio_con_iva = precio_sin_iva * 1.19   #Impuesto de iva 19%
+                    print(f"Venta procesada: Se vendio {cantidad} unidades de '{nombre}' por un total de ${precio_con_iva:.2f} (incluido 19% de IVA).")
+                else:
+                    print(f"No hay suficiente unidades de '{nombre}' en stock.")
+        
+                    
+                    
+                    
+                    
+        
+              
