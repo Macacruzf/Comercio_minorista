@@ -41,8 +41,8 @@ while True:
                     print(f"Venta procesada: Se vendio {cantidad} unidades de '{nombre}' por un total de ${precio_con_iva:.2f} (IVA 19% incluido).")
                 else:
                     print(f"No hay suficiente unidades de '{nombre}' en stock.")
-        else:
-            print(f"El producto '(nombre)'no esta en el inventario.")
+            else:
+                print(f"El producto '(nombre)'no esta en el inventario.")
 elif opcion == "4":
      if inventario:
         total_productos = len(inventario)
