@@ -1,12 +1,11 @@
-from Comercio_libreria import iniciar_sesion, agregar_producto, mostrar_inventario, procesar_venta, generar_informe
+from Comercio_libreria import iniciar_sesion, agregar_producto, mostrar_inventario, procesar_venta
 
 def mostrar_menu():
     print("\nMenu Comercio ALMA ZEN")
     print("1. Agregar producto")
     print("2. Mostrar inventario")
     print("3. Procesar venta")
-    print("4. Generar informe")
-    print("5. Salir")
+    print("4. Salir")
 
 def main():
     if iniciar_sesion():
@@ -19,9 +18,8 @@ def main():
                 mostrar_inventario()
             elif opcion == "3":
                 procesar_venta()
+
             elif opcion == "4":
-                generar_informe()
-            elif opcion == "5":
                 print("Saliendo del programa...")
                 break
             else:
@@ -30,4 +28,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-      
