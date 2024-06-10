@@ -22,9 +22,20 @@ def iniciar_sesion():
 inventario = []
 
 def agregar_producto():
-    codigo = int(input("Ingrese el código del producto: "))
+    while True:
+        try:
+            codigo = int(input("Ingrese el código del producto: "))
+            break
+        except ValueError:
+            print ("Error: El código debe ser un número entero. Por favor, inténtelo de nuevo.")
     nombre = input("Ingrese el nombre del producto: ")
-    cantidad = int(input("Ingrese la cantidad del producto: "))
+
+    while True:
+        try:
+            cantidad = int(input("Ingrese la cantidad del producto: "))
+            break
+        except ValueError:
+            print("Error: La cantidad debe ser un número entero. Por favor, inténtelo de nuevo.")
     precio = float(input("Ingrese el precio del producto: "))
     inventario.append([codigo, nombre, cantidad, precio])
     print(f"Producto '{nombre}' agregado al inventario.")
@@ -56,20 +67,6 @@ def procesar_venta():
                 print(f"No hay suficientes unidades de '{nombre}' en stock.")
                 return
     print(f"El producto '{nombre}' no está en el inventario.")
-
-def generar_informe():
-    if inventario:
-        total_productos = len(inventario)
-        total_cantidad = sum(producto[2] for producto in inventario)
-        total_valor = sum(producto[2] * producto[3] for producto in inventario)
-        print("Informe del inventario:")
-        print(f"Total de productos: {total_productos}")
-        print(f"Total de unidades en stock: {total_cantidad}")
-        print(f"Valor total del inventario: ${total_valor:.2f}")
-    else:
-        print("El inventario está vacío.")
-
-
 
                 
                                                                                                        
