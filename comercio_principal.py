@@ -6,4 +6,18 @@ while True:
   print("3. Procesar Venta")
   print("4. Generar informe")
   print("5. Salir")
- opcion=input("Ingrese una opción (1-5)") 
+ opcion=input("Ingrese una opción: (1-5)") 
+  if opcion == "1":
+    agregar_producto()
+  elif opcion == "2":
+    mostrar_inventario()
+  elif opcion == "3":
+     procesar_venta()
+  elif  opcion == "4":
+    generar_informe()
+  elif opcion == "5":
+        print("Saliendo del programa...")
+        break
+  else:
+        print("Opción inválida.")
+      
