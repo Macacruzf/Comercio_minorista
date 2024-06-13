@@ -23,23 +23,28 @@ inventario = []
 
 def agregar_producto():
     while True:
-        try:
-            codigo = int(input("Ingrese el código del producto: "))
-            break
-        except ValueError:
-            print ("Error: El código debe ser un número entero. Por favor, inténtelo de nuevo.")
-    nombre = input("Ingrese el nombre del producto: ")
-
-    while True:
-        try:
-            cantidad = int(input("Ingrese la cantidad del producto: "))
-            break
-        except ValueError:
-            print("Error: La cantidad debe ser un número entero. Por favor, inténtelo de nuevo.")
-    precio = float(input("Ingrese el precio del producto: "))
-    inventario.append([codigo, nombre, cantidad, precio])
-    print(f"Producto '{nombre}' agregado al inventario.")
-
+        codigo = input("Ingrese el código del producto (4 dígitos): ")
+        if codigo.isdigit() and len(codigo) == 4:
+            nombre = input("Ingrese el nombre del producto: ")
+            while True:
+                cantidad = input("Ingrese la cantidad del producto: ")
+                if cantidad.isdigit():
+                    cantidad = int(cantidad)
+                    while True:
+                        precio = input("Ingrese el precio del producto: ")
+                        if precio.replace(".", "", 1).isdigit():
+                            precio = float(precio)
+                            inventario.append([int(codigo), nombre, cantidad, precio])
+                            print(f"Producto '{nombre}' agregado al inventario.")
+                            return
+                        else:
+                            print("Error: El precio debe ser un número. Por favor, inténtelo de nuevo.")
+                    break
+                else:
+                    print("Error: La cantidad debe ser un número entero. Por favor, inténtelo de nuevo.")
+        else:
+            print("Error: El código debe ser un número entero de 4 dígitos. Por favor, inténtelo de nuevo.")
+            
 def mostrar_inventario():
     if inventario:
         print("Inventario:")
