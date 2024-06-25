@@ -1,4 +1,4 @@
-
+# Comercio_libreria.py
 
 # Usuario
 nombre_usuario = "user"
@@ -20,6 +20,7 @@ def iniciar_sesion():
 
 # Inventario
 inventario = []
+historial_ventas = []
 
 def agregar_producto():
     while True:
@@ -44,6 +45,7 @@ def agregar_producto():
                     print("Error: La cantidad debe ser un número entero. Por favor, inténtelo de nuevo.")
         else:
             print("Error: El código debe ser un número entero de 4 dígitos. Por favor, inténtelo de nuevo.")
+            
 
 def mostrar_inventario():
     if inventario:
@@ -54,11 +56,4 @@ def mostrar_inventario():
             print(f"Código: {codigo}, Nombre: {nombre}, Cantidad: {cantidad}, Precio unitario: ${precio_unitario:.2f}, Total valor: ${total_valor:.2f}")
     else:
         print("El inventario está vacío.")
-
-
-
-       
-
-
-            
 
