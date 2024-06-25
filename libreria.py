@@ -1,4 +1,4 @@
-# Comercio_libreria.py
+
 
 # Usuario
 nombre_usuario = "user"
