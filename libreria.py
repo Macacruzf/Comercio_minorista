@@ -56,4 +56,95 @@ def mostrar_inventario():
             print(f"Código: {codigo}, Nombre: {nombre}, Cantidad: {cantidad}, Precio unitario: ${precio_unitario:.2f}, Total valor: ${total_valor:.2f}")
     else:
         print("El inventario está vacío.")
+def tiene_stock_minimo(codigo_producto, stock_minimo):
+    for producto in inventario:
+        if producto[0] == codigo_producto:
+            return producto[2] >= stock_minimo
+    return False
+
+def procesar_venta():
+    nombre_producto = input("Ingrese el nombre del producto a vender: ")
+    if nombre_producto:
+        cantidad_a_vender = input("Ingrese la cantidad a vender: ")
+        if cantidad_a_vender.isdigit():
+            cantidad_a_vender = int(cantidad_a_vender)
+            for producto in inventario:
+                if producto[1] == nombre_producto:
+                    if producto[2] >= cantidad_a_vender:
+                        producto[2] -= cantidad_a_vender
+                        precio_sin_iva = producto[3] * cantidad_a_vender
+                        precio_con_iva = precio_sin_iva * 1.19  # impuesto de IVA
+                        historial_ventas.append([nombre_producto, cantidad_a_vender, precio_con_iva])
+                        print("----Boleta----")
+                        print(f"Venta procesada: Se vendieron {cantidad_a_vender} unidades de '{nombre_producto}'.")
+                        print(f"Total: ${precio_con_iva:.2f} (IVA 19% incluido).")
+                        return
+                    elif producto[2] < cantidad_a_vender:
+                        print(f"No hay suficientes unidades de '{nombre_producto}' en stock.")
+                        return
+            print(f"El producto '{nombre_producto}' no está en el inventario.")
+        else:
+            print("Error: La cantidad debe ser un número entero.")
+    else:
+        print("Error: El nombre del producto no puede estar vacío.")
+
+def mostrar_historial_ventas():
+    if historial_ventas:
+        print("Historial de ventas:")
+        for venta in historial_ventas:
+            nombre_producto, cantidad, total = venta
+            print(f"Producto: {nombre_producto}, Cantidad: {cantidad}, Total: ${total:.2f}")
+    else:
+        print("No hay ventas registradas.")
+def tiene_stock_minimo(codigo_producto, stock_minimo):
+    for producto in inventario:
+        if producto[0] == codigo_producto:
+            return producto[2] >= stock_minimo
+    return False
+
+def procesar_venta():
+    nombre_producto = input("Ingrese el nombre del producto a vender: ")
+    if nombre_producto:
+        cantidad_a_vender = input("Ingrese la cantidad a vender: ")
+        if cantidad_a_vender.isdigit():
+            cantidad_a_vender = int(cantidad_a_vender)
+            for producto in inventario:
+                if producto[1] == nombre_producto:
+                    if producto[2] >= cantidad_a_vender:
+                        producto[2] -= cantidad_a_vender
+                        precio_sin_iva = producto[3] * cantidad_a_vender
+                        precio_con_iva = precio_sin_iva * 1.19  # impuesto de IVA
+                        historial_ventas.append([nombre_producto, cantidad_a_vender, precio_con_iva])
+                        print("----Boleta----")
+                        print(f"Venta procesada: Se vendieron {cantidad_a_vender} unidades de '{nombre_producto}'.")
+                        print(f"Total: ${precio_con_iva:.2f} (IVA 19% incluido).")
+                        return
+                    elif producto[2] < cantidad_a_vender:
+                        print(f"No hay suficientes unidades de '{nombre_producto}' en stock.")
+                        return
+            print(f"El producto '{nombre_producto}' no está en el inventario.")
+        else:
+            print("Error: La cantidad debe ser un número entero.")
+    else:
+        print("Error: El nombre del producto no puede estar vacío.")
+
+def mostrar_historial_ventas():
+    if historial_ventas:
+        print("Historial de ventas:")
+        for venta in historial_ventas:
+            nombre_producto, cantidad, total = venta
+            print(f"Producto: {nombre_producto}, Cantidad: {cantidad}, Total: ${total:.2f}")
+    else:
+        print("No hay ventas registradas.")
+
+
+
+       
+
+
+
+
+       
+
+
 
